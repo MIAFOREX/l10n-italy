@@ -3,6 +3,7 @@
 #
 #    Copyright (C) 2015 Abstract (http://www.abstract.it)
 #    @author Davide Corio <davide.corio@abstract.it>
+#    Andrea Cometa <a.cometa@apuliasoftware.it>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,16 +22,12 @@
 
 {
     'name': 'Italian Regions Import',
-    'version': '0.1',
+    'version': '8.0.1.0.1',
     'category': 'Extra Tools',
     'license': 'AGPL-3',
     'summary': 'Import Italian regions from Geonames',
-    'description': """
-This module extends l10n_it_base_location_geonames_import in order to correctly
-import Italian regions
-""",
-    'author': "Abstract,Odoo Community Association (OCA)",
-    'website': 'http://www.abstract.it',
+    'author': "Odoo Community Association (OCA)",
+    'website': 'http://www.odoo-italia.org',
     'depends': [
         'base',
         'base_location_geonames_import',
@@ -40,5 +37,4 @@ import Italian regions
         'views/partner_view.xml',
         'views/region_view.xml'],
     'installable': True,
-    'active': False,
 }

@@ -3,6 +3,7 @@
 #
 #    Copyright (C) 2015 Abstract (http://www.abstract.it)
 #    @author Davide Corio <davide.corio@abstract.it>
+#    Andrea Cometa <a.cometa@apuliasoftware.it>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -27,9 +28,10 @@ class ResPartner(models.Model):
 
     region_id = fields.Many2one('res.country.region', 'Region')
 
-    @api.one
+    @api.multi
     @api.onchange('zip_id')
     def onchange_zip_id(self):
         super(ResPartner, self).onchange_zip_id()
-        if self.zip_id:
-            self.region_id = self.zip_id.state_id.region_id.id
+        for partner in self:
+            if partner.zip_id:
+                partner.region_id = partner.zip_id.state_id.region_id.id
